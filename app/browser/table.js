@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import {Table, Column, Cell} from 'fixed-data-table';
 
-export class Table extends React.Component {
+export class DataTable extends React.Component {
   constructor(props) {
     super(props);
 
