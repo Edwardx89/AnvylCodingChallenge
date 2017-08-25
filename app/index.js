@@ -2,13 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider, connect } from 'react-redux';
 import store from './store';
-// import { Router, browserHistory, Route, Redirect } from 'react-router';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-import DataTable from './browser/table.js';
+import { Router, browserHistory, Route, Redirect } from 'react-router';
+import {DataTable} from './browser/table';
+import {Example} from './browser/test';
 
 ReactDOM.render(
   <Provider store={store}>
-  <Router>
+  <Router history={browserHistory}>
     <Route path="/" component={DataTable} />
   </Router>
   </Provider>,
