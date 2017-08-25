@@ -15341,8 +15341,6 @@ var _reactRouter = __webpack_require__(266);
 
 var _table = __webpack_require__(292);
 
-var _test = __webpack_require__(318);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom2.default.render(_react2.default.createElement(
@@ -30482,9 +30480,7 @@ var DataTable = exports.DataTable = function (_React$Component) {
         onGridSort: this.handleGridSort,
         enableCellSelect: true,
         columns: this.state.column.map(function (elm, idx) {
-          return { key: elm.id, name: elm.name, width: 200, resizable: true, sortable: true, locked: function () {
-              if (elm.name === "JURISDICTION NAME") return true;
-            }() };
+          return { key: elm.id.toString(), name: elm.name, width: 350, resizable: true, sortable: true };
         }),
         rowGetter: this.rowGetter,
         rowsCount: this.getSize(),
@@ -80469,15 +80465,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ ])))
 });
 ;
-
-/***/ }),
-/* 315 */,
-/* 316 */,
-/* 317 */,
-/* 318 */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/coding/Desktop/Interview_Challenge/Anvyl/app/browser/test.js'");
 
 /***/ })
 /******/ ]);

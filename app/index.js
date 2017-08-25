@@ -4,7 +4,6 @@ import { Provider, connect } from 'react-redux';
 import store from './store';
 import { Router, browserHistory, Route, Redirect } from 'react-router';
 import {DataTable} from './browser/table';
-import {Example} from './browser/test';
 
 ReactDOM.render(
   <Provider store={store}>
