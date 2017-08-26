@@ -25,6 +25,7 @@ export class DataTable extends React.Component {
   }
 
   componentDidMount() {
+    // Getting the data from the API and storing it in the local state.
     axios.get('https://data.cityofnewyork.us/views/kku6-nxdu/rows.json?accessType=DOWNLOAD')
     .then(res => res.data)
     .then(data => {

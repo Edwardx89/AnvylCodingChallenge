@@ -30344,6 +30344,7 @@ var DataTable = exports.DataTable = function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
+      // Getting the data from the API and storing it in the local state.
       _axios2.default.get('https://data.cityofnewyork.us/views/kku6-nxdu/rows.json?accessType=DOWNLOAD').then(function (res) {
         return res.data;
       }).then(function (data) {
