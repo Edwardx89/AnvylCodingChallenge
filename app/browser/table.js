@@ -86,7 +86,7 @@ export class DataTable extends React.Component {
       onGridSort={this.handleGridSort}
       enableCellSelect={true}
       columns={this.state.column.map((elm, idx) => {
-        return {key: elm.id.toString(), name: elm.name, width: 350, resizable: true, sortable: true }
+        return {key: elm.id.toString(), name: elm.name, width: 350, resizable: true, sortable: true, filterable: true }
       })}
       rowGetter={this.rowGetter}
       rowsCount={this.getSize()}
