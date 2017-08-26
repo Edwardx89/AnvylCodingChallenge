@@ -37,7 +37,7 @@ export class DataTable extends React.Component {
       }).forEach((data) => {
         let obj = {}
         for (let i = 0; i < column.length; i++){
-          obj[column[i].id] = data[i]
+          obj[column[i].id] = +data[i]
         }
         filteredData.push(obj)
       })
@@ -82,6 +82,8 @@ export class DataTable extends React.Component {
     console.log(this.state)
     if(this.state.rows.length === undefined) return null
     return (
+      <div>
+      <h2>{this.state.name}</h2>
       <ReactDataGrid
       onGridSort={this.handleGridSort}
       enableCellSelect={true}
@@ -94,6 +96,8 @@ export class DataTable extends React.Component {
       toolbar={<Toolbar enableFilter={true}/>}
       onAddFilter={this.handleFilterChange}
       onClearFilters={this.onClearFilters} />
+      <h4> By Edward Goo </h4>
+      </div>
     )
   }
 }

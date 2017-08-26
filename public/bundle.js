@@ -30425,7 +30425,7 @@ var DataTable = exports.DataTable = function (_React$Component) {
         }).forEach(function (data) {
           var obj = {};
           for (var i = 0; i < column.length; i++) {
-            obj[column[i].id] = data[i];
+            obj[column[i].id] = +data[i];
           }
           filteredData.push(obj);
         });
@@ -30476,18 +30476,32 @@ var DataTable = exports.DataTable = function (_React$Component) {
     value: function render() {
       console.log(this.state);
       if (this.state.rows.length === undefined) return null;
-      return _react2.default.createElement(_reactDataGrid2.default, {
-        onGridSort: this.handleGridSort,
-        enableCellSelect: true,
-        columns: this.state.column.map(function (elm, idx) {
-          return { key: elm.id.toString(), name: elm.name, width: 350, resizable: true, sortable: true, filterable: true };
-        }),
-        rowGetter: this.rowGetter,
-        rowsCount: this.getSize(),
-        minHeight: 500,
-        toolbar: _react2.default.createElement(_reactDataGridAddons.Toolbar, { enableFilter: true }),
-        onAddFilter: this.handleFilterChange,
-        onClearFilters: this.onClearFilters });
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h2',
+          null,
+          this.state.name
+        ),
+        _react2.default.createElement(_reactDataGrid2.default, {
+          onGridSort: this.handleGridSort,
+          enableCellSelect: true,
+          columns: this.state.column.map(function (elm, idx) {
+            return { key: elm.id.toString(), name: elm.name, width: 350, resizable: true, sortable: true, filterable: true };
+          }),
+          rowGetter: this.rowGetter,
+          rowsCount: this.getSize(),
+          minHeight: 500,
+          toolbar: _react2.default.createElement(_reactDataGridAddons.Toolbar, { enableFilter: true }),
+          onAddFilter: this.handleFilterChange,
+          onClearFilters: this.onClearFilters }),
+        _react2.default.createElement(
+          'h4',
+          null,
+          ' By Edward Goo '
+        )
+      );
     }
   }]);
 
