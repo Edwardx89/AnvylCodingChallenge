@@ -79,7 +79,6 @@ export class DataTable extends React.Component {
 }
 
   render() {
-    console.log(this.state)
     if(this.state.rows.length === undefined) return null
     return (
       <div>

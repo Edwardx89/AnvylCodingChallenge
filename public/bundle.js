@@ -27898,10 +27898,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(112);
 
-var _reducer = __webpack_require__(263);
-
-var _reducer2 = _interopRequireDefault(_reducer);
-
 var _reduxThunk = __webpack_require__(264);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
@@ -27912,75 +27908,10 @@ var _reduxLogger2 = _interopRequireDefault(_reduxLogger);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = (0, _redux.createStore)(_reducer2.default, (0, _redux.applyMiddleware)(_reduxLogger2.default, _reduxThunk2.default));
+exports.default = (0, _redux.createStore)((0, _redux.applyMiddleware)(_reduxLogger2.default, _reduxThunk2.default));
 
 /***/ }),
-/* 263 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = botReducer;
-
-/* -------------------<   ACTIONS   >--------------------- */
-var GET_QUESTIONS = "GET_QUESTIONS";
-
-/* ---------------<   ACTION CREATORS   >------------------- */
-
-var getQuestions = function getQuestions(questions) {
-  return {
-    type: GET_QUESTIONS,
-    general: questions.general,
-    intro: questions.intro,
-    technical: questions.technical
-  };
-};
-
-/* -------------------<   REDUCERS   >--------------------- */
-
-var initialState = {
-  general: [],
-  technical: [],
-  intro: []
-};
-
-function botReducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
-  var action = arguments[1];
-
-  switch (action.type) {
-    case GET_QUESTIONS:
-      return Object.assign({}, state, action);
-    default:
-      return state;
-  }
-}
-
-/* ------------------<   DISPATCHERS   >-------------------- */
-
-var getAllQuestions = exports.getAllQuestions = function getAllQuestions() {
-  return function (dispatch) {
-    var general = axios.get('api/general').then(function (res) {
-      return res.data;
-    }),
-        intro = axios.get('api/intro').then(function (res) {
-      return res.data;
-    }),
-        technical = axios.get('api/technical').then(function (res) {
-      return res.data;
-    });
-
-    Promise.all([general, intro, technical]).spread(function (general, intro, technical) {
-      return dispatch(getQuestions({ general: general, intro: intro, technical: technical }));
-    });
-  };
-};
-
-/***/ }),
+/* 263 */,
 /* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -30474,7 +30405,6 @@ var DataTable = exports.DataTable = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      console.log(this.state);
       if (this.state.rows.length === undefined) return null;
       return _react2.default.createElement(
         'div',
